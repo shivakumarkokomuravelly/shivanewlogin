@@ -10,7 +10,7 @@ pipeline {
         }
         stage('building the code') {
             steps {
-                sh 'mvn package'
+                sh 'mvn clean package'
             }
         }   
         stage('archiving the artifacts') {
