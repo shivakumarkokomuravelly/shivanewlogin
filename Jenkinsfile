@@ -13,6 +13,10 @@ pipeline {
                 sh 'mvn package'
             }
         }   
-        
+        stage('archiving the artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            }
+        }   
     }
 }
